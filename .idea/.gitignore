@@ -1,0 +1,19 @@
+*.xml
+.name
+
+# バージョン管理するファイルを除外ファイルとして以下に列挙
+!/copyright/*.xml
+!/dictionaries/*.xml
+!/inspectionProfiles/*.xml
+!/runConfigurations/*.xml
+!/scopes/*.xml
+
+!/encodings.xml
+!/gradle.xml
+
+!/vcs.xml
+
+#!/templateLanguages.xml
+#!/codeStyleSettings.xml
+#!/fileColors.xml
+#/inspectionProfiles/profiles_settings.xml
