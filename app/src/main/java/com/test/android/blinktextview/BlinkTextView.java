@@ -23,8 +23,7 @@ public class BlinkTextView extends TextView {
                 }
 
                 if (mBlinking) {
-                    Message message = BlinkTextView.obtainMessage();
-                    sendMessageDelayed(message, mInterval);
+                    sendEmptyMessageDelayed(MESSAGE_CODE, mInterval);
                 }
             }
         }
@@ -57,18 +56,11 @@ public class BlinkTextView extends TextView {
         mInterval = intervalMillis;
         mBlinking = true;
 
-        Message message = obtainMessage();
-        mHandler.sendMessageDelayed(message, mInterval);
+        mHandler.sendEmptyMessageDelayed(MESSAGE_CODE, mInterval);
     }
 
     public void stopBlinking() {
         mBlinking = false;
         mHandler.removeMessages(MESSAGE_CODE);
-    }
-
-    private static Message obtainMessage() {
-        Message message = Message.obtain();
-        message.what = MESSAGE_CODE;
-        return message;
     }
 }
